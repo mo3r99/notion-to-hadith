@@ -42,7 +42,7 @@ function App() {
     const dbHadith = await getDoc(doc(db, `${book}`, `${hadithNo}`));
 
     if (dbHadith.exists()) {
-      if (confirm("There is already commentary here. Overwrite?")) {
+      if (confirm("Caution: There is already commentary here. Overwrite?")) {
         await setDoc(doc(db, `${book}`, `${hadithNo}`), {
           html: html
         }).then(setLoading(false));
